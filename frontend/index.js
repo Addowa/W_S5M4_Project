@@ -74,8 +74,10 @@ async function moduleProject4() {
         console.log('promise rejected with an err.message --> ', err.message)
     }
   })
-    function getWeekDay(date) {
-      return date
+    function getWeekDay(dateString) {
+      const date = new Date(dateString + 'T00:00:00Z');
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      return days[date.getUTCDay()];
     }
   // 👆 WORK WORK ABOVE THIS LINE 👆
 
